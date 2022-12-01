@@ -1,4 +1,4 @@
-import { View, StyleSheet, FlatList, Button } from "react-native";
+import { View, StyleSheet, FlatList, Button, StatusBar } from "react-native";
 import React, { useState } from "react";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
@@ -28,10 +28,12 @@ const App = () => {
     });
   }
   return (
+    <>
+    <StatusBar backgroundColor='#1e085a'/>
     <View style={styles.appContainer}>
       <Button
         title="Add New Goal"
-        color="#5e0acc"
+        color="#a065ec"
         onPress={startAddGoalHandler}
       />
       <GoalInput
@@ -59,6 +61,7 @@ const App = () => {
         />
       </View>
     </View>
+    </>
   );
 };
 
@@ -68,7 +71,8 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     paddingTop: 50,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    backgroundColor: "#1e085a"
   },
   goalsContainer: {
     flex: 5
